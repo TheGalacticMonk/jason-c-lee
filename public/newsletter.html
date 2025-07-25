@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to the Jason Lee Newsletter</title>
+  <meta name="description" content="Join the Jason Lee newsletter for direct updates, insights, and exclusive discounts. Stay connected where the algorithm cannot censor.">
+  <meta name="keywords" content="Jason Lee, newsletter, email, updates, exclusive, insights, discounts, portfolio, clothing, drops, books, film, music, self-mastery, sovereignty">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jasonclee.net/newsletter.html" />
+  <link rel="icon" type="image/png" href="images/jason-lee-favicon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Subscribe to the Jason Lee Newsletter" />
+  <meta property="og:description" content="Sign up for exclusive content, insights, and updates directly from Jason Lee." />
+  <meta property="og:image" content="https://jasonclee.net/images/jason-lee-photo.webp" />
+  <meta property="og:url" content="https://jasonclee.net/newsletter.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Subscribe to the Jason Lee Newsletter" />
+  <meta name="twitter:description" content="Direct email updates from Jason Lee: music, books, self-mastery, no algorithm." />
+  <meta name="twitter:image" content="https://jasonclee.net/images/jason-lee-photo.webp" />
+
+  <!-- Schema.org for Newsletter -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Jason Lee Newsletter",
+    "description": "Sign up for Jason Lee’s email newsletter. Exclusive content, updates, and more."
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="sidebar"></div>
+<div id="sidebar-mobile"></div>
+<!-- MOBILE PROFILE PHOTO BAR -->
+<div class="mobile-profile-photo">
+  <img src="images/jason-lee-photo.webp" alt="Jason Lee" loading="lazy" />
+</div>
+<main class="main-content">
+  <section class="portfolio-center" style="margin-top:7.3rem; display:flex; flex-direction:column; align-items:center; gap:1.111rem;">
+   <div class="contact-card twitter-blue-card" style="max-width:410px;">
+      <form id="newsletter-form" autocomplete="off" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+        <label for="newsletter-email" style="font-size:1.07rem; color:#242424; text-align:center; font-weight:600; margin-bottom:1rem; margin-top:0.2rem;">
+          Free Newsletter<br>
+          <span style="font-size:0.99rem;font-weight:400; color:#444;">Get updates, insights, and exclusive discounts. No spam. Ever.</span>
+        </label>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          required
+          placeholder="you@email.com"
+          style="
+            width: 97%;
+            max-width: 355px;
+            padding: 0.91rem 1.1rem;
+            font-size: 1.13rem;
+            border-radius: 8px;
+            border: 1.6px solid #b1d2fc;
+            background: #f7fbff;
+            color: #111;
+            margin-bottom: 1.03rem;
+            outline: none;
+            transition: border-color 0.16s;
+            font-family: 'Inter',sans-serif;
+            box-sizing: border-box;"
+          autocomplete="email"
+          spellcheck="false"
+          autocapitalize="off"
+        />
+        <button
+          type="submit"
+          id="newsletter-btn"
+          style="
+            width: 97%;
+            max-width: 355px;
+            padding: 0.88rem 1.1rem;
+            background: #1da1f2;
+            color: #fff;
+            font-size: 1.14rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(29,161,242,0.09);
+            cursor: pointer;
+            transition: background 0.16s, box-shadow 0.16s;
+            margin-bottom: 0.1rem;
+            font-family: 'Inter',sans-serif;">
+          Subscribe
+        </button>
+        <div id="newsletter-message" style="font-size:0.99rem;margin-top:0.41rem;height:1.3em;text-align:center;color:#0c6276;"></div>
+      </form>
+    </div>
+    <div class="copyright" style="max-width: 500px; margin-left: auto; margin-right: auto; margin-top: 0rem; padding: 0.5rem 0; text-align: center; font-size: 0.8rem; color: #666;">
+      <p>© 2025 Jason Lee • Coded by Red Sheep</p>
+    </div>
+  </section>
+</main>
+
+<script>
+// Apple-level input polish
+const emailInput = document.getElementById('newsletter-email');
+emailInput.addEventListener('focus', e => {
+  emailInput.style.borderColor = '#1da1f2';
+});
+emailInput.addEventListener('blur', e => {
+  emailInput.style.borderColor = '#b1d2fc';
+});
+
+// Submission logic
+const form = document.getElementById('newsletter-form');
+const btn = document.getElementById('newsletter-btn');
+const msg = document.getElementById('newsletter-message');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  msg.textContent = '';
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+
+  const email = emailInput.value.trim();
+  if (!validateEmail(email)) {
+    msg.textContent = 'Enter a valid email.';
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+    emailInput.focus();
+    return;
+  }
+
+  try {
+    const response = await fetch('https://hook.us2.make.com/d5p6gf48r6fcj8sicq64udo2byy7f2uq', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email})
+    });
+
+    if (response.ok) {
+      msg.textContent = 'You’re in. Check your inbox.';
+      msg.style.color = '#189944';
+      btn.textContent = '✓ Subscribed';
+      emailInput.value = '';
+    } else {
+      throw new Error('Error: ' + response.status);
+    }
+  } catch (err) {
+    msg.textContent = 'Could not subscribe. Try again.';
+    msg.style.color = '#e84c3d';
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+  }
+});
+
+function validateEmail(email) {
+  // Simple but robust for newsletter
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Button hover polish
+btn.addEventListener('mouseenter', () => {
+  if (!btn.disabled) btn.style.background = '#1889ca';
+});
+btn.addEventListener('mouseleave', () => {
+  if (!btn.disabled) btn.style.background = '#1da1f2';
+});
+</script>
+<script src="js/main.js"></script>
+<script src="js/sidebar-loader.js?v=2"></script>
+</body>
+</html>

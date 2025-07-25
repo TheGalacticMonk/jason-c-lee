@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jason Lee | Photography Portfolio</title>
+  <meta name="description" content="Photography portfolio of Jason Lee — travel, street, nature, and portrait photography from Earth. Multidimensional images from an author, Founder, and filmmaker.">
+  <meta name="keywords" content="Jason Lee, photography, photo portfolio, travel photography, street photography, Japan, American West, nature, portrait, visionary, Founder, artist">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jasonclee.net/photography.html" />
+  <link rel="icon" type="image/png" href="images/jason-lee-favicon.png" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jason Lee | Photography Portfolio" />
+  <meta property="og:description" content="Original travel, street, nature, and portrait photography by Jason Lee — visionary images from around the world." />
+  <meta property="og:image" content="https://jasonclee.net/photography/model-mudra.webp" />
+  <meta property="og:url" content="https://jasonclee.net/photography.html" />
+  <meta property="og:type" content="website" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jason Lee | Photography Portfolio" />
+  <meta name="twitter:description" content="Travel, street, and portrait photography from around the world, by Jason Lee." />
+  <meta name="twitter:image" content="https://jasonclee.net/photography/model-mudra.webp" />
+  <!-- Image Gallery Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Jason Lee Photography Portfolio",
+    "description": "Travel, street, nature, and portrait photography by Jason Lee.",
+    "url": "https://jasonclee.net/photography.html",
+    "image": [
+      "https://jasonclee.net/photography/model-mudra.webp",
+      "https://jasonclee.net/photography/pronghorn.webp",
+      "https://jasonclee.net/photography/grand-canyon.webp"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Jason Lee",
+      "url": "https://jasonclee.net"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="sidebar"></div>
+  <div id="sidebar-mobile"></div>
+
+  <!-- MOBILE PROFILE PHOTO BAR -->
+  <div class="mobile-profile-photo">
+    <img src="images/jason-lee-photo.webp" alt="Jason Lee" loading="lazy" />
+  </div>
+
+  <main class="main-content">
+    <section class="portfolio-center" style="margin-top: 7.3rem;">
+      <!-- Photography Swiper Slider -->
+      <div class="swiper photography-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="photography/model-mudra.webp" alt="Model Mudra" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/pronghorn.webp" alt="Pronghorn" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/grand-canyon.webp" alt="Grand Canyon" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/akihabara-electric-town-night.webp" alt="Akihabara Electric Town Night" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/tokyo-garden-tree.webp" alt="Tokyo Garden Tree" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/tokyo-sea-gull.webp" alt="Tokyo Sea Gull" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/akihabara-electric-town-day.webp" alt="Akihabara Electric Town Day" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/model-sunglasses.webp" alt="Model Sunglasses" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/river-geyser.webp" alt="River Geyser" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/orange-cat.webp" alt="Orange Cat" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/model-swimsuit.webp" alt="Model Swimsuit" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/tokyo-bird.webp" alt="Tokyo Bird" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/bison.webp" alt="Bison" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/snake-river.webp" alt="Snake River" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/striped-cat.webp" alt="Striped Cat" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/white-dog.webp" alt="White Dog" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/galactic-monk-mudras.webp" alt="Galactic Monk Mudras" loading="lazy" /></div>
+          <div class="swiper-slide"><img src="photography/tokyo-garden.webp" alt="Tokyo Garden" loading="lazy" /></div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="copyright" style="max-width: 500px; margin-left: auto; margin-right: auto; margin-top: 0rem; padding: 0.5rem 0; text-align: center; font-size: 0.8rem; color: #666;">
+        <p>© <?php echo date('Y'); ?> Jason Lee • Coded by Red Sheep</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.photography-swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 18,
+      centeredSlides: true,
+      grabCursor: true,
+      keyboard: { enabled: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: false, // set to { delay: 4000 } for auto-play
+      breakpoints: {
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 24
+        }
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+<script src="js/sidebar-loader.js?v=3"></script>
+</body>
+</html>

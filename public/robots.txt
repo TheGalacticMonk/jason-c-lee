@@ -1,0 +1,6 @@
+# robots.txt for your personal brand site
+User-agent: *
+Allow: /
+
+# Point crawlers to your sitemap
+Sitemap: https://jasonclee.net/sitemap.xml
